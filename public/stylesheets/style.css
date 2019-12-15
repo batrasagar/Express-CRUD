@@ -1,0 +1,20 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.container {
+  padding-top: 20px;
+}
+a {
+  color: #00b7ff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 300px;
+  color: blue;
+}
+.navbar-brand .brand {
+  max-height: 50px;
+  width: auto;
+}

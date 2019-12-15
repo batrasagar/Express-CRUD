@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col col-md-8">
+    <h4>Todo List</h4>
+  </div>
+  <div class="col col-md-4">
+    <div class="float-right pb-1">
+      <a class="btn btn-primary float-right" href="todos/new">New</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+
+  <div class="col col-md-12">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="thead-dark">
+          <th width="10px">Sr</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>priority</th>
+          <th width="140px">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{title}}</td>
+          <td>{{description}}</td>
+          <td>{{priority}}</td>
+
+          <td>
+            <div class="float-left">
+
+              <a class="btn btn-sm btn-primary d-inline-block" href="todos/view/{{id}}"><span><i
+                    class="fa fa-eye"></i></span></a>
+
+              <a class="btn btn-sm btn-warning d-inline-block" href="todos/edit/{{id}}"><span><i
+                    class="fa fa-edit"></i></span></a>
+
+              <form class="form-inline float-right" action="/todos/delete/{{id}}" method="POST">
+                <input name="_method" value="DELETE" type="hidden">
+                <button type="submit" class="btn btn-danger btn-sm" style="margin-left:4px;">
+                  <span><i class="fa fa-trash"></i></span>
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
